@@ -12,24 +12,19 @@ interface GalleryProps {
   withButtons?: boolean;
 }
 
-export function Gallery({
-  folder,
-  length,
-  width,
-  height,
-  withButtons = true,
-}: GalleryProps) {
+export function Gallery({ folder, length, width, height, withButtons = true }: GalleryProps) {
   return (
     <Carousel withButtons={withButtons}>
-      {({ ...slideProps }) =>
-        [...Array(length)].map((_, index) => (
-          <div {...slideProps} key={index}>
+      {(slideProps) =>
+        Array.from({ length }, (_, i) => (
+          <div {...slideProps} key={i}>
             <Image
-              src={`${folder}/${++index}.jpg`}
-              alt={`Foto ${++index}`}
+              src={`${folder}/${i + 1}.jpg`}
+              alt={`Foto ${i + 1}`}
               width={width}
               height={height}
-              priority={true}
+              sizes="(max-width: 992px) 100vw, 800px"
+              priority={i === 0}
             />
           </div>
         ))
@@ -37,4 +32,3 @@ export function Gallery({
     </Carousel>
   );
 }
-

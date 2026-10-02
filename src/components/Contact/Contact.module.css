@@ -13,8 +13,14 @@
   align-items: center;
   gap: 1rem;
 }
-.title { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
-.title b { color: var(--gold); }
+.title {
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.title b { color: var(--gold); font-weight: 700; }
+.icon { filter: brightness(0) invert(1); }
 .text { opacity: 0.9; }
 .button {
   display: inline-flex;

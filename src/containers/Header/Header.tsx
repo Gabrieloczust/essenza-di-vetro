@@ -8,25 +8,17 @@ import styles from "./Header.module.css";
 export function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const handleToggleMenu = () => {
-    setMenuIsOpen((prev) => !prev);
-  };
-
-  const handleCloseMenu = () => {
-    setMenuIsOpen(false);
-  };
-
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <Logo handleCloseMenu={handleCloseMenu} />
+        <Logo handleCloseMenu={() => setMenuIsOpen(false)} />
         <Menu
           menuIsOpen={menuIsOpen}
-          handleToggleMenu={handleToggleMenu}
-          handleCloseMenu={handleCloseMenu}
+          handleToggleMenu={() => setMenuIsOpen((prev) => !prev)}
+          handleCloseMenu={() => setMenuIsOpen(false)}
         />
         <Sociais />
       </div>
     </header>
   );
-} 
+}

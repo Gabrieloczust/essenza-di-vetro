@@ -1,26 +1,7 @@
-# Configuracoes do pnpm. Desde a v11 elas nao sao mais lidas do campo "pnpm" do package.json.
-
 # O pnpm 9 (usado pela Vercel) trata este arquivo como definicao de workspace e
 # exige "packages" preenchido, senao falha com "packages field missing or empty".
 packages:
   - "."
-
-# Forca versoes corrigidas de dependencias transitivas cujos pacotes pais ainda
-# nao atualizaram. O seletor "pkg@<major>" preserva cada major em uso na arvore,
-# para nao quebrar quem depende de uma major diferente.
-overrides:
-  brace-expansion@1: ^1.1.18
-  engine.io: ^6.6.9
-  flatted: ^3.4.4
-  glob@11: ^11.1.0
-  minimatch@3: ^3.1.5
-  minimatch@10: ^10.2.6
-  picomatch@2: ^2.3.2
-  picomatch@4: ^4.0.5
-  postcss: ^8.5.25
-  sharp: ^0.35.3
-  socket.io-parser: ^4.2.7
-  ws: ^8.21.1
 
 # Pacotes autorizados a rodar scripts de instalacao (vinculam binarios nativos).
 allowBuilds:

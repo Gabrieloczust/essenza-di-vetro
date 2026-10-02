@@ -13,39 +13,22 @@
     "build": "next build",
     "postbuild": "pnpm next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
     "lightgallery": "2.9.0",
-    "next": "^15.5.22",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^15.5.22",
+    "eslint-config-next": "^16.3.8",
     "next-sitemap": "^4.2.3",
-    "typescript": "^5.9.3"
-  },
-  "pnpm": {
-    "comment": "Overrides duplicados de pnpm-workspace.yaml de proposito: o pnpm 9 e 10 (usados pela Vercel) leem daqui, o pnpm 11 le apenas do pnpm-workspace.yaml. Os dois blocos precisam ficar iguais, senao o install falha com ERR_PNPM_LOCKFILE_CONFIG_MISMATCH.",
-    "overrides": {
-      "brace-expansion@1": "^1.1.18",
-      "engine.io": "^6.6.9",
-      "flatted": "^3.4.4",
-      "glob@11": "^11.1.0",
-      "minimatch@3": "^3.1.5",
-      "minimatch@10": "^10.2.6",
-      "picomatch@2": "^2.3.2",
-      "picomatch@4": "^4.0.5",
-      "postcss": "^8.5.25",
-      "sharp": "^0.35.3",
-      "socket.io-parser": "^4.2.7",
-      "ws": "^8.21.1"
-    }
+    "typescript": "~6.0.3"
   }
 }

@@ -7,9 +7,9 @@ export function Contact() {
   return (
     <section className={styles.container} id="contato">
       <div className={styles.content}>
-        <span className={styles.title}>
+        <h2 className={styles.title}>
           Peça seu <b>orçamento</b> pelo WhatsApp
-        </span>
+        </h2>
         <p className={styles.text}>
           Envie fotos e medidas e receba um orçamento sem compromisso.
         </p>
@@ -19,7 +19,7 @@ export function Contact() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src="/svgs/whatsapp.svg" alt="" width={22} height={22} />
+          <Image src="/svgs/whatsapp.svg" alt="" width={22} height={22} className={styles.icon} />
           Chamar no WhatsApp
         </a>
         <a className={styles.phone} href={links.tel}>

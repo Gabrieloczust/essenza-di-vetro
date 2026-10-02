@@ -1,80 +1,62 @@
 "use client";
 
-import React, { useRef } from "react";
-import LightGallery from "lightgallery/react";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-import "lightgallery/css/lg-video.css";
-
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
-import lgVideo from "lightgallery/plugins/video";
+import React from "react";
 
 interface ServiceGalleryProps {
   folder: string;
   total: number;
-  extension?: string;
   videos?: string[];
   children?: React.ReactNode;
 }
 
-export function ServiceGallery({
-  folder,
-  total,
-  extension = "jpg",
-  videos = [],
-  children,
-}: ServiceGalleryProps) {
-  const gallery = `/images/services/gallery/${folder}`;
-  const images = Array.from({ length: total }, (_, i) => i + 1);
-  const lightGalleryRef = useRef<any>(null);
+export function ServiceGallery({ folder, total, videos = [], children }: ServiceGalleryProps) {
+  const open = async () => {
+    // carrega a galeria (JS + CSS) só quando alguém clica
+    const [{ default: lightGallery }, { default: thumbnail }, { default: zoom }, { default: video }] =
+      await Promise.all([
+        import("lightgallery"),
+        import("lightgallery/plugins/thumbnail"),
+        import("lightgallery/plugins/zoom"),
+        import("lightgallery/plugins/video"),
+        import("lightgallery/css/lightgallery.css"),
+        import("lightgallery/css/lg-zoom.css"),
+        import("lightgallery/css/lg-thumbnail.css"),
+        import("lightgallery/css/lg-video.css"),
+      ]);
 
-  const handleOpenGallery = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (lightGalleryRef.current) {
-      lightGalleryRef.current.openGallery(0);
-    }
+    const base = `/images/services/gallery/${folder}`;
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+
+    const instance = lightGallery(host, {
+      dynamic: true,
+      speed: 500,
+      plugins: [thumbnail, zoom, video],
+      dynamicEl: [
+        ...Array.from({ length: total }, (_, i) => ({
+          src: `${base}/${i + 1}.jpg`,
+          thumb: `${base}/${i + 1}.jpg`,
+          subHtml: `<div>Imagem ${i + 1}</div>`,
+        })),
+        ...videos.map((src, i) => ({
+          src,
+          thumb: "/images/services/gallery/video-thumb.jpg",
+          subHtml: `<div>Vídeo ${i + 1}</div>`,
+          video: { source: [{ src, type: "vimeo" }], attributes: { preload: false, controls: true } },
+        })),
+      ],
+    });
+
+    host.addEventListener("lgAfterClose", () => {
+      instance.destroy();
+      host.remove();
+    });
+    instance.openGallery(0);
   };
 
   return (
-    <>
-      <div
-        onClick={handleOpenGallery}
-        style={{ cursor: "pointer", width: "fit-content" }}
-      >
-        {children}
-      </div>
-
-      <LightGallery
-        onInit={(ref) => (lightGalleryRef.current = ref.instance)}
-        speed={500}
-        plugins={[lgThumbnail, lgZoom, lgVideo]}
-        elementClassNames="service-gallery"
-        dynamic
-        dynamicEl={[
-          ...images.map((number) => ({
-            src: `${gallery}/${number}.${extension}`,
-            thumb: `${gallery}/${number}.${extension}`,
-            subHtml: `<div>Imagem ${number}</div>`,
-          })),
-          ...videos.map((video, index) => ({
-            src: video,
-            thumb: "/images/services/gallery/video-thumb.jpg",
-            subHtml: `<div>Vídeo ${index + 1}</div>`,
-            video: {
-              source: [
-                {
-                  src: video,
-                  type: "vimeo",
-                },
-              ],
-              attributes: { preload: false, controls: true },
-            },
-          })),
-        ]}
-      />
-    </>
+    <div onClick={open} style={{ cursor: "pointer", width: "fit-content" }}>
+      {children}
+    </div>
   );
 }
-

@@ -23,7 +23,11 @@ export const metadata = {
   alternates: { canonical: "/" },
 };
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
 
 const jsonLd = {
   "@context": "https://schema.org",

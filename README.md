@@ -1,11 +1,13 @@
 # Essenza Di Vetro
 
-Site da Essenza Di Vetro, vidraçaria com atendimento a domicílio em Curitiba. Next.js 15 + React 19.
+Site da Essenza Di Vetro, vidraçaria com atendimento a domicílio em Curitiba. Next.js 16 + React 19.
 
 ## Rodar
 ```
 pnpm install
-pnpm dev
+pnpm dev      # desenvolvimento
+pnpm lint     # eslint
+pnpm build    # produção
 ```
 
 ## Onde editar

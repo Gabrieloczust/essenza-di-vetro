@@ -9,26 +9,15 @@ interface LogoProps {
 
 export function Logo({ handleCloseMenu }: LogoProps) {
   return (
-    <Link passHref href="/" className={styles.logo} onClick={handleCloseMenu}>
-      <div className={styles.desk}>
-        <Image
-          src="/logo.png"
-          alt="Logo Essenza Di Vetro"
-          title="Essenza Di Vetro"
-          width={150}
-          height={68}
-        />
-      </div>
-      <div className={styles.mobile}>
-        <Image
-          src="/logo.png"
-          alt="Logo Essenza Di Vetro"
-          title="Essenza Di Vetro"
-          width={110}
-          height={50}
-        />
-      </div>
+    <Link href="/" className={styles.logo} onClick={handleCloseMenu}>
+      <Image
+        src="/logo.png"
+        alt="Essenza Di Vetro - Vidraçaria em Curitiba"
+        width={317}
+        height={144}
+        sizes="(max-width: 992px) 100px, 150px"
+        priority
+      />
     </Link>
   );
 }
-

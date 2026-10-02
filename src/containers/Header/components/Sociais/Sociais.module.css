@@ -24,20 +24,7 @@
   background-image: linear-gradient(to bottom, #2cf06f, #099739);
 }
 
-.facebook {
-  background-image: linear-gradient(to bottom, #9fd3bc, #1e9fd7);
-}
 
-.instagram {
-  background-image: radial-gradient(
-    139.66% 139.66% at 0% 97.5%,
-    #ff8100 0%,
-    #ff7209 19%,
-    #f55e16 32%,
-    #d92938 48%,
-    #9100ff 100%
-  );
-}
 
 @media (max-width: 1150px) {
   .social {

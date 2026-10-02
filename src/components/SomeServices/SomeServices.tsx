@@ -48,6 +48,7 @@ export function SomeServices() {
                       src={`/images/services/miniaturas/${image}.jpg`}
                       width={200}
                       height={200}
+                      sizes="200px"
                       alt={title}
                     />
                   </div>
