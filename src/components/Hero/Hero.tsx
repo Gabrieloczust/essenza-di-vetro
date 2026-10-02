@@ -30,7 +30,7 @@ export function Hero() {
             <Image src="/svgs/whatsapp.svg" alt="" width={22} height={22} />
             Pedir orçamento no WhatsApp
           </a>
-          <span className={styles.note}>Orçamento sem compromisso · Atendemos toda Curitiba</span>
+          <span className={styles.note}>Orçamento sem compromisso · Toda Curitiba · Todos os dias</span>
         </div>
 
         <div className={styles.gallery}>
@@ -39,6 +39,7 @@ export function Hero() {
             length={6}
             width={792}
             height={600}
+            alt="Trabalho de vidraçaria da Essenza Di Vetro em Curitiba"
           />
         </div>
       </div>

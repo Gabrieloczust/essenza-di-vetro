@@ -25,6 +25,7 @@ export function Contact() {
         <a className={styles.phone} href={links.tel}>
           ou ligue: {contacts.whatsapp}
         </a>
+        <p className={styles.hours}>Atendimento: {site.hours.toLowerCase()}</p>
 
         <h2 className={styles.areasTitle}>Regiões atendidas em Curitiba</h2>
         <ul className={styles.areas}>

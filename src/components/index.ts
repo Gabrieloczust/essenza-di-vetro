@@ -16,3 +16,5 @@ export { ServiceGallery } from "./ServiceGallery";
 
 export { HowItWorks } from "./HowItWorks";
 export { Reviews } from "./Reviews";
+export { About } from "./About";
+export { Faq } from "./Faq";

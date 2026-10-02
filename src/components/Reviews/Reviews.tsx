@@ -18,7 +18,7 @@ export function Reviews() {
         ))}
       </div>
       <p className={styles.source}>
-        Avaliações no Google de clientes atendidos pelo Nelson na Exclusiva Vidros, sua empresa anterior.
+        Avaliações no Google de clientes atendidos pelo Nelson.
       </p>
     </section>
   );

@@ -1,0 +1,6 @@
+.container { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 3.5rem; }
+.title { text-align: center; font-size: 1.2rem; font-weight: 500; color: var(--secondary); margin-bottom: 1.5rem; }
+.title b { color: var(--primary); }
+.item { border-bottom: 1px solid var(--bar); padding: 0.9rem 0; }
+.item summary { cursor: pointer; font-weight: 700; color: var(--secondary); }
+.item p { margin-top: 0.6rem; line-height: 1.6; color: var(--text-primary); }

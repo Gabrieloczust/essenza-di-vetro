@@ -1,9 +1,11 @@
 import "@/styles/globals.css";
 import { Header, Footer, Copyrigth } from "@/containers";
 import { WhatsappBudget } from "@/components";
-import { site, contacts } from "@/data";
+import { site, jsonLd } from "@/data";
 import Script from "next/script";
 import { Montserrat } from "next/font/google";
+
+export const viewport = { themeColor: "#00402b" };
 
 export const metadata = {
   metadataBase: new URL(site.url),
@@ -21,6 +23,9 @@ export const metadata = {
     type: "website",
   },
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { "max-image-preview": "large", "max-snippet": -1 } },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/og_image.jpg"] },
+  other: { "geo.region": "BR-PR", "geo.placename": "Curitiba" },
 };
 
 const montserrat = Montserrat({
@@ -29,22 +34,12 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "GlassRepair",
-  name: site.name,
-  url: site.url,
-  telephone: "+55" + contacts.whatsapp.replace(/\D/g, ""),
-  image: `${site.url}/og_image.jpg`,
-  areaServed: { "@type": "City", name: site.city },
-};
-
 // Google Analytics (GA4): defina NEXT_PUBLIC_GA_ID na Vercel para ativar
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={montserrat.className}>
+    <html lang="pt-BR" className={montserrat.className}>
       <body>
         {gaId && (
           <>

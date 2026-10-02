@@ -10,9 +10,10 @@ interface GalleryProps {
   width: number;
   height: number;
   withButtons?: boolean;
+  alt?: string;
 }
 
-export function Gallery({ folder, length, width, height, withButtons = true }: GalleryProps) {
+export function Gallery({ folder, length, width, height, withButtons = true, alt = "Foto" }: GalleryProps) {
   return (
     <Carousel withButtons={withButtons}>
       {(slideProps) =>
@@ -20,7 +21,7 @@ export function Gallery({ folder, length, width, height, withButtons = true }: G
           <div {...slideProps} key={i}>
             <Image
               src={`${folder}/${i + 1}.jpg`}
-              alt={`Foto ${i + 1}`}
+              alt={`${alt} ${i + 1}`}
               width={width}
               height={height}
               sizes="(max-width: 992px) 100vw, 800px"
