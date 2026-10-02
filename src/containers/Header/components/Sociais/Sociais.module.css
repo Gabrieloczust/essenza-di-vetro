@@ -1,40 +1,20 @@
-.sociais {
-  display: flex;
-  gap: 0.5rem;
+.cta {
+  padding: 0.55rem 1.2rem;
+  border: 1.5px solid var(--primary);
+  border-radius: 999px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.social {
-  height: 35px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.75rem;
-}
-
-.social:hover {
-  transform: scale(1.1);
-}
-
-.social img {
-  filter: brightness(0) invert(1);
-}
-
-.whatsapp {
-  background-image: linear-gradient(to bottom, #2cf06f, #099739);
-}
-
-
-
-@media (max-width: 1150px) {
-  .social {
-    width: 32px;
-    height: 32px;
-  }
+.cta:hover {
+  background-color: var(--primary);
+  color: #fff;
 }
 
 @media (max-width: 992px) {
-  .sociais {
+  .cta {
     display: none;
   }
 }

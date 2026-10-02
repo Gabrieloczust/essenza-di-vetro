@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 .title b { color: var(--gold); font-weight: 700; }
-.icon { filter: brightness(0) invert(1); }
+.icon { filter: brightness(0); }
 .text { opacity: 0.9; }
 .button {
   display: inline-flex;
@@ -29,8 +29,8 @@
   margin-top: 0.5rem;
   padding: 1rem 2rem;
   border-radius: 999px;
-  background: #25d366;
-  color: #fff;
+  background: var(--gold);
+  color: #0a2a1f;
   font-weight: 700;
   font-size: 1.1rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);

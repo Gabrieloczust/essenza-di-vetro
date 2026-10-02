@@ -3,6 +3,7 @@ import Image from "next/image";
 import { links } from "@/data/links";
 import styles from "./WhatsappBudget.module.css";
 
+// Barra fixa no rodapé, só no celular (no desktop os botões ficam no topo e nas seções)
 export function WhatsappBudget() {
   return (
     <a
@@ -10,26 +11,9 @@ export function WhatsappBudget() {
       target="_blank"
       rel="noreferrer"
       className={styles.budget}
-      title="Clique e Solicite um orçamento pelo Whatsapp"
+      title="Clique e solicite um orçamento pelo WhatsApp"
     >
-      <div className={styles.desk}>
-        <Image
-          src="/svgs/whatsapp.svg"
-          alt="WhatsApp"
-          width={64}
-          height={30}
-        />
-      </div>
-
-      <div className={styles.mobile}>
-        <Image
-          src="/svgs/whatsapp.svg"
-          alt="WhatsApp"
-          width={20}
-          height={20}
-        />
-      </div>
-
+      <Image src="/svgs/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
       <span>Solicite um orçamento</span>
     </a>
   );

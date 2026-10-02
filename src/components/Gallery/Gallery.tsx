@@ -24,7 +24,7 @@ export function Gallery({ folder, length, width, height, withButtons = true, alt
               alt={`${alt} ${i + 1}`}
               width={width}
               height={height}
-              sizes="(max-width: 992px) 100vw, 800px"
+              sizes="(max-width: 992px) 100vw, 60vw"
               priority={i === 0}
             />
           </div>

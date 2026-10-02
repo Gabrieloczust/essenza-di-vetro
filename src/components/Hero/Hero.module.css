@@ -1,64 +1,31 @@
 .container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 80px);
-  max-height: 600px;
+  height: clamp(520px, calc(100vh - 80px), 640px);
   overflow: hidden;
   position: relative;
   z-index: 2;
-  background: #fff;
+  background: var(--secondary);
 }
 
 .content {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
   height: 100%;
-  position: relative;
-  display: flex;
-}
-
-.content::before {
-  position: absolute;
-  content: url("../../../public/images/hero/vidros.jpg");
-  height: 100%;
-  width: 190px;
-  transform: translate(-150px, 0);
-  background-color: #f4f4f4;
-  opacity: 0.8;
-}
-
-.content::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 1000%;
-  transform: translate(-50%, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(20, 143, 93, 0.75) 0%,
-    rgba(0, 64, 43, 0.75) 100%
-  );
-  z-index: -1;
+  display: grid;
+  grid-template-columns: minmax(480px, 45%) 1fr;
+  grid-template-rows: minmax(0, 1fr);
 }
 
 .welcome {
   height: 100%;
-  width: 35%;
-  margin-left: 40px;
-  background: linear-gradient(
-    180deg,
-    rgba(20, 143, 93, 0.75) 0%,
-    rgba(0, 64, 43, 0.75) 100%
-  );
+  min-width: 0;
+  /* alinha o texto com o restante do conteúdo (1280px) em telas largas */
+  padding: 3rem 3rem 3rem max(2rem, calc((100vw - 1280px) / 2));
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--ligth);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
 }
 
 .subtitle {
@@ -85,6 +52,7 @@
 }
 
 .text {
+  max-width: 420px;
   line-height: 1.5;
   margin: 2rem 0 0 0;
 }
@@ -92,15 +60,50 @@
 .bar {
   height: 3px;
   width: 25%;
-  background-color: #c9a431;
+  background-color: var(--gold);
 }
 
 .gallery {
   height: 100%;
-  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #0a2a1f;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.cta img {
+  filter: brightness(0);
+}
+
+.note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
 }
 
 @media (max-width: 992px) {
+  .content {
+    display: block;
+  }
+
   .gallery {
     display: none;
   }
@@ -108,11 +111,6 @@
   .container {
     height: auto;
     max-height: none;
-  }
-
-  .content::before,
-  .content::after {
-    display: none;
   }
 
   .welcome {
@@ -201,28 +199,4 @@
     font-size: 1rem;
     max-width: 95%;
   }
-}
-
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
-  padding: 0.9rem 1.6rem;
-  border-radius: 999px;
-  background: #25d366;
-  color: #fff;
-  font-weight: 700;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-}
-
-.cta img {
-  filter: brightness(0) invert(1);
-}
-
-.note {
-  margin-top: 0.75rem;
-  font-size: 0.8rem;
-  opacity: 0.85;
 }

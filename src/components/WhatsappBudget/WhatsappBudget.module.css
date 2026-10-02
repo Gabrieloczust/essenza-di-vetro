@@ -1,79 +1,27 @@
-@keyframes whatsappGreenPulse {
-  0% {
-    background: linear-gradient(90deg, #25d366 0%, #128c7e 50%, #075e54 100%);
-    background-size: 200% 100%;
-    background-position: 0% 50%;
-  }
-  50% {
-    background: linear-gradient(90deg, #25d366 0%, #128c7e 50%, #075e54 100%);
-    background-size: 200% 100%;
-    background-position: 100% 50%;
-  }
-  100% {
-    background: linear-gradient(90deg, #25d366 0%, #128c7e 50%, #075e54 100%);
-    background-size: 200% 100%;
-    background-position: 0% 50%;
-  }
-}
-
 .budget {
-  height: 64px;
-  background: #72a93c;
-  position: fixed;
-  right: calc(64px - 270px);
-  top: 35%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  width: 270px;
-  transition: all 0.5s;
-  border-radius: 25px 0 0 25px;
-  animation: whatsappGreenPulse 8s ease-in-out infinite;
-}
-
-.budget:hover {
-  right: 0;
-  background: #099739;
-  animation: none;
-}
-
-.budget span {
-  font-size: 1rem;
-  color: #fff;
-  flex: 1;
-}
-
-.budget img {
-  filter: brightness(0) invert(1);
-}
-
-.mobile {
   display: none;
 }
 
 @media (max-width: 992px) {
   .budget {
-    height: auto;
-    padding: 10px;
-    right: 0;
-    top: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    border-radius: 0;
-    justify-content: center;
+    padding: 10px;
+    z-index: 2;
+    background: linear-gradient(90deg, #25d366 0%, #128c7e 50%, #075e54 100%);
   }
 
   .budget span {
-    flex: unset;
     margin-left: 0.5rem;
     font-size: 0.9rem;
+    color: #fff;
   }
 
-  .mobile {
-    display: block;
-  }
-
-  .desk {
-    display: none;
+  .budget img {
+    filter: brightness(0) invert(1);
   }
 }

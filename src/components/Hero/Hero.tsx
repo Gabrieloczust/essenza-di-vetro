@@ -36,7 +36,7 @@ export function Hero() {
         <div className={styles.gallery}>
           <Gallery
             folder="/images/hero/gallery"
-            length={6}
+            length={5}
             width={792}
             height={600}
             alt="Trabalho de vidraçaria da Essenza Di Vetro em Curitiba"

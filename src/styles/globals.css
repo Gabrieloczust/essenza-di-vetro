@@ -105,23 +105,28 @@ button {
   height: 100%;
 }
 
-.embla__slide > div {
+.embla__slide img {
+  display: block;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .embla__buttons {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  transform: translate(-50%, 0);
+  right: 1rem;
+  bottom: 1rem;
   display: flex;
+  gap: 0.5rem;
 }
 
 .embla__buttons .embla__button {
   outline: 0;
   cursor: pointer;
-  background-color: #e3e3e3;
-  opacity: 0.7;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.85;
   touch-action: manipulation;
   border: 0;
   width: 40px;
