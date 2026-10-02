@@ -13,3 +13,6 @@ export { BannerServices } from "./BannerServices";
 export { Services } from "./Services";
 
 export { ServiceGallery } from "./ServiceGallery"; 
+
+export { HowItWorks } from "./HowItWorks";
+export { Reviews } from "./Reviews";

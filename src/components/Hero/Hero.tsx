@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import { Gallery } from "@/components";
+import { links } from "@/data";
 import styles from "./Hero.module.css";
 
 export function Hero() {
@@ -23,6 +25,12 @@ export function Hero() {
             janelas, portas e muito mais em vidro <b>temperado</b> e{" "}
             <b>laminado</b>. Peça seu orçamento pelo <b>WhatsApp</b>.
           </p>
+
+          <a className={styles.cta} href={links["whatsapp-mobile"]} target="_blank" rel="noreferrer">
+            <Image src="/svgs/whatsapp.svg" alt="" width={22} height={22} />
+            Pedir orçamento no WhatsApp
+          </a>
+          <span className={styles.note}>Orçamento sem compromisso · Atendemos toda Curitiba</span>
         </div>
 
         <div className={styles.gallery}>
