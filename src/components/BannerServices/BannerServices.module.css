@@ -1,0 +1,155 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.banner {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1600px;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.title div {
+  display: flex;
+  flex-direction: column;
+  width: 301px;
+}
+
+.title__bold {
+  font-size: 3rem;
+  letter-spacing: 6px;
+  position: relative;
+}
+
+.title__bold::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5.4rem;
+  background: #148f5d8c;
+}
+
+.title span {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.title p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: var(--secondary);
+}
+
+.build {
+  position: relative;
+  height: 346px;
+  padding-left: 6rem;
+}
+
+.build__border {
+  height: 100%;
+  width: 282px;
+  border: 2px solid var(--primary);
+  position: absolute;
+  z-index: -1;
+  transform: rotate(22deg);
+}
+
+.build::before,
+.build::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  height: 60px;
+  width: 2000px;
+  background: #9fd3bcb5;
+}
+
+.build::before {
+  top: 0;
+}
+
+.build::after {
+  bottom: 0;
+}
+
+.degrade {
+  opacity: 60%;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    padding: 2rem;
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        #148f5dcc 0%,
+        rgba(0, 64, 43, 0.85) 100%
+      ),
+      url("/images/services/degrade-verde-big.png") no-repeat center/cover;
+  }
+
+  .degrade {
+    display: none;
+  }
+
+  .title {
+    padding: 0;
+  }
+
+  .title div {
+    width: auto;
+    text-align: center;
+  }
+
+  .title__bold {
+    font-size: 1.8rem;
+    color: var(--ligth);
+  }
+
+  .title__bold::before {
+    display: none;
+  }
+
+  .title span {
+    font-size: 1.3rem;
+    color: var(--ligth);
+  }
+
+  .title p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--dark);
+    text-align: center;
+    color: var(--ligth);
+  }
+
+  .build {
+    display: none;
+  }
+
+  .build__border {
+    display: none;
+  }
+}
+

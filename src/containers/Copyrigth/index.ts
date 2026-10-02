@@ -1,0 +1,1 @@
+export { Copyrigth } from "./Copyrigth"; 

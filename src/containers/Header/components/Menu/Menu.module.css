@@ -1,0 +1,80 @@
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.separator {
+  height: 56px;
+  width: 2px;
+  background: var(--primary-ligth);
+  margin: 0 0.25rem;
+}
+
+@media (max-width: 1150px) {
+  .menu {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hamburguer {
+    position: relative;
+    width: 24px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .hamburguer div,
+  .hamburguer div::before,
+  .hamburguer div::after {
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary);
+  }
+
+  .hamburguer div::before,
+  .hamburguer div::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburguer div::before {
+    top: 0;
+  }
+
+  .hamburguer div::after {
+    bottom: 0;
+  }
+
+  .close div {
+    transform: rotate(45deg);
+  }
+
+  .close div::before {
+    transform: rotate(90deg);
+  }
+
+  .close div::after {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .menu.hide {
+    display: none;
+  }
+
+  .separator {
+    display: none;
+  }
+}

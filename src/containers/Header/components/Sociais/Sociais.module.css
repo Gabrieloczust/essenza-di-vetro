@@ -1,0 +1,53 @@
+.sociais {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+}
+
+.social:hover {
+  transform: scale(1.1);
+}
+
+.social img {
+  filter: brightness(0) invert(1);
+}
+
+.whatsapp {
+  background-image: linear-gradient(to bottom, #2cf06f, #099739);
+}
+
+.facebook {
+  background-image: linear-gradient(to bottom, #9fd3bc, #1e9fd7);
+}
+
+.instagram {
+  background-image: radial-gradient(
+    139.66% 139.66% at 0% 97.5%,
+    #ff8100 0%,
+    #ff7209 19%,
+    #f55e16 32%,
+    #d92938 48%,
+    #9100ff 100%
+  );
+}
+
+@media (max-width: 1150px) {
+  .social {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sociais {
+    display: none;
+  }
+}

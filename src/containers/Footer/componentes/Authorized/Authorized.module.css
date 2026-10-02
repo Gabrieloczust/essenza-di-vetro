@@ -1,0 +1,17 @@
+.authorized {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--footer-title);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

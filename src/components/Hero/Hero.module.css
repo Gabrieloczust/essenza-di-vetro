@@ -1,0 +1,229 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 136px);
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+
+.content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+
+.content::before {
+  position: absolute;
+  content: url("../../../public/images/hero/vidros.jpg");
+  height: 100%;
+  width: 190px;
+  transform: translate(-150px, 0);
+  background-color: #f4f4f4;
+  opacity: 0.8;
+}
+
+.content::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 1000%;
+  transform: translate(-50%, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 143, 93, 0.75) 0%,
+    rgba(0, 64, 43, 0.75) 100%
+  );
+  z-index: -1;
+}
+
+.welcome {
+  height: 100%;
+  width: 35%;
+  margin-left: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 143, 93, 0.75) 0%,
+    rgba(0, 64, 43, 0.75) 100%
+  );
+  color: var(--ligth);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin: 0 0 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0 1.4rem;
+}
+
+.title b {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.title span {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text {
+  line-height: 1.5;
+  margin: 2rem 0 0 0;
+}
+
+.bar {
+  height: 3px;
+  width: 25%;
+  background-color: #c9a431;
+}
+
+.gallery {
+  height: 100%;
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    display: none;
+  }
+
+  .container {
+    height: auto;
+    max-height: none;
+  }
+
+  .content::before,
+  .content::after {
+    display: none;
+  }
+
+  .welcome {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 4rem 2rem;
+    background: linear-gradient(
+        135deg,
+        rgba(20, 143, 93, 0.9) 0%,
+        rgba(0, 64, 43, 0.8) 50%,
+        rgba(0, 64, 43, 0.7) 100%
+      ),
+      url("/images/services/degrade-verde-big.png") no-repeat center/cover;
+    box-shadow: 0 8px 32px 0 rgba(0, 64, 43, 0.15);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.95;
+  }
+
+  .title {
+    margin: 1.5rem 0 1.2rem;
+  }
+
+  .title b {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+
+  .title span {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text {
+    font-size: 1.05rem;
+    margin-top: 2rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #c9a431, #e6c75a);
+    margin: 1.5rem auto;
+    box-shadow: 0 2px 8px rgba(201, 164, 49, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    padding: 2rem 1.5rem;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .title b {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .title span {
+    font-size: 2.2rem;
+  }
+
+  .bar {
+    margin: .5rem auto;
+  }
+
+  .text {
+    font-size: 1rem;
+    max-width: 95%;
+  }
+}
+

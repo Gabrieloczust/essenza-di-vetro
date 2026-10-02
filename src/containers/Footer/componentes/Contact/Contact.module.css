@@ -1,0 +1,23 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact:hover .title {
+  color: var(--secondary);
+}
+.contact:hover .text {
+  color: var(--primary);
+}
+
+.title {
+  color: var(--footer-title);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.text {
+  color: var(--footer-text);
+  line-height: 1.8;
+}

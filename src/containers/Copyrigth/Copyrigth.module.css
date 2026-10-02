@@ -1,0 +1,45 @@
+.copyrigth {
+  width: 100%;
+  background-color: #242424;
+  color: var(--ligth);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 1.5rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyrigth a:hover b {
+  color: var(--primary);
+}
+
+.copyrigth br {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .copyrigth {
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .copyrigth a {
+    margin-top: 0.5rem;
+  }
+
+  .copyrigth br {
+    display: initial;
+  }
+}

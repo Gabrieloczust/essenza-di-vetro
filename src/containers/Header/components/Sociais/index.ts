@@ -1,0 +1,1 @@
+export { Sociais } from "./Sociais";

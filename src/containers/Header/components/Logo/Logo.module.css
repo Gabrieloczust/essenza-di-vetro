@@ -1,0 +1,22 @@
+.logo {
+  margin-top: -30px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .desk {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+}
